@@ -5,14 +5,14 @@ function Header() {
     return(
         <header>
             <div className="header-logo-container">
-                <Link to="/">
+                <Link to="/Personal-Portfolio-Website/">
                     <i className="fa-solid fa-house fa-2x"></i>
                 </Link>
             </div>
             <nav className="header-nav">
                 <ul>
-                    <HashLink className="nav-hashlink" to="/#about-me">About Me</HashLink>
-                    <HashLink className="nav-hashlink" to="/#projects">Projects</HashLink>
+                    <HashLink className="nav-hashlink" to="/Personal-Portfolio-Website/#about-me">About Me</HashLink>
+                    <HashLink className="nav-hashlink" to="/Personal-Portfolio-Website/#projects">Projects</HashLink>
                 </ul>
             </nav>
         </header>

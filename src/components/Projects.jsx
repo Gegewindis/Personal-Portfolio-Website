@@ -11,26 +11,26 @@ function Projects() {
                 <h1>Personal Projects</h1>
             </div>
             <div className="personal-projects-container">
-            <ProjectsCard image={malicusImage} title="Malicus" _url="/malicus_project"
+            <ProjectsCard image={malicusImage} title="Malicus" _url="/Personal-Portfolio-Website/malicus_project"
                 text="A project of a lyrics website
                     that I made using only HTML and CSS!
                     This was my first try at making a
                     website."/>
 
-            <ProjectsCard image={simsimImage} title="SimSim" _url="/simsim_project"
+            <ProjectsCard image={simsimImage} title="SimSim" _url="/Personal-Portfolio-Website/simsim_project"
                 text="A project I worked on for another 
                     one of my programming courses. 
                     This simulation is built with python. My
                     first project where I used object oriented 
                     programming."/>
 
-            <ProjectsCard image={flodfillImage} title="FloodFill" _url="/floodfill_project"
+            <ProjectsCard image={flodfillImage} title="FloodFill" _url="/Personal-Portfolio-Website/floodfill_project"
                 text="A project I worked on for one 
                     of my starting programming courses. 
                     This game is built with python using 
                     the library pygame!"/>
 
-            <ProjectsCard image={editorImage} title="Pygame Level Editor" _url="/editor_project"
+            <ProjectsCard image={editorImage} title="Pygame Level Editor" _url="/Personal-Portfolio-Website/editor_project"
                 text="A well fledged tool I worked
                 on in pygame. This tool helps developers when
                 creating game maps using different assets

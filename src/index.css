@@ -152,12 +152,15 @@ header{
 .familiar-tools-container{
     padding-left: 10%;
     padding-right: 10%;
-    height: 150px;
+    height: auto;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
     overflow: hidden;
     align-items: center;
+}
+
+.familiar-tools-header{
+    margin-top: 40px;
 }
 
 .familiar-tools-list {
@@ -169,6 +172,8 @@ header{
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    margin-top: 20px;
+    margin-bottom: 40px;
 }
 
 .familiar-tools-list i:hover{

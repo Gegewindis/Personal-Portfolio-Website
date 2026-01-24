@@ -10,7 +10,7 @@ function FamiliarTools() {
     return(
         <div className="familiar-tools-container">
             <div className="familiar-tools-header">
-                    <h1>Some familiar tools</h1>
+                    <h2>Familiar tools</h2>
             </div>
 
             <div className="familiar-tools-list"> 

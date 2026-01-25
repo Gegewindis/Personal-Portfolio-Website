@@ -14,7 +14,9 @@ function Introduction() {
                             <a href="https://github.com/Gegewindis" target="_blank">
                                 <i className="fa-brands fa-github fa-2x"></i>
                             </a>
-                            <i className="fa-brands fa-linkedin fa-2x"></i>
+                            <a href="https://linkedin.com/in/george-bobocea-05576a3a8" target="_blank">
+                                <i className="fa-brands fa-linkedin fa-2x"></i>
+                            </a>
                     </div>
 
                     <div className="title">

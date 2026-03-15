@@ -4,6 +4,8 @@ import SimSim from "./pages/simsim_page.jsx"
 import FloodFill from "./pages/floodfill_page.jsx"
 import NotFoundPage from "./pages/notFoundPage.jsx"
 import Editor from "./pages/editor_page.jsx"
+import VeloData from "./pages/velodata_page.jsx"
+import InfiniteLoldle from "./pages/infinite_page.jsx"
 
 import Layout from "./components/Layout";
 import { createBrowserRouter, RouterProvider } from "react-router-dom"
@@ -17,6 +19,8 @@ const router = createBrowserRouter([
       { path: "/Personal-Portfolio-Website/simsim_project", element: <SimSim /> },
       { path: "/Personal-Portfolio-Website/floodfill_project", element: <FloodFill /> },
       { path: "/Personal-Portfolio-Website/editor_project", element: <Editor /> },
+      { path: "/Personal-Portfolio-Website/velodata_project", element: <VeloData /> },
+      { path: "/Personal-Portfolio-Website/infinite_loldle_project", element: <InfiniteLoldle /> },
       { path: "*", element: <NotFoundPage /> },
     ],
   },

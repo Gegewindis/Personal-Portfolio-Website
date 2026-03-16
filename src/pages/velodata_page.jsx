@@ -26,7 +26,7 @@ function VeloData() {
             <br />
             <p>
                 I had some challenges with the <strong>QT framework</strong>. The implementation of different 
-                <strong>threads</strong> for sending data and receiving data were a bit tricky. I quickly learned that 
+                <strong> threads</strong> for sending data and receiving data were a bit tricky. I quickly learned that 
                 signals existed which let me safely communicate between threads and the UI. I also 
                 implemented a custom label with a drag and drop event that can receive files. 
             </p>

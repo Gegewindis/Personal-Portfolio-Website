@@ -58,16 +58,21 @@ function Projects() {
                 <h1>Personal Projects</h1>
             </div>
             <div className="personal-projects-container">
-            {projectsInfo.map((project) => (
+            {projectsInfo.map((project, index) => (
                 <Card
-                key={project.id}
+                key={index}
                 toLink={project._url}
                 imageSrc={project.image}
                 titleText={project.title}
                 paragraphText={project.text}
                 backgroundColor="var(--color-header)"
+                margin="30px"
+                lineColor="var(--color-text)"
+                width="350px"
+                height="425px"
                 lineOn={false}
-                height="450px"
+                titleMargin="5px"
+                titleMarginLeft="0px"
                 imageHeight="200px"
                 cursor="pointer"
                 imageOn={true}></Card>

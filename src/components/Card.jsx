@@ -28,6 +28,7 @@ function Card({
     titleMargin = "0px",
     titleMarginLeft = "0px",
     titleFontSize = "25px",
+    titleColor = "",
 
     // Line CSS
     lineMarginTop = "10px",
@@ -93,7 +94,8 @@ function Card({
     const titleStyle = {
         margin: titleMargin,
         marginLeft: titleMarginLeft,
-        fontSize: titleFontSize
+        fontSize: titleFontSize,
+        color: titleColor
     }
 
     const lineStyle = {

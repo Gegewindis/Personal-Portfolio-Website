@@ -6,16 +6,19 @@ import Footer from "../components/Footer.jsx"
 import Background from "../components/Background.jsx"
 import FamiliarTools from "../components/Familiartools.jsx"
 
+import ReactivePlate from "../components/ReactivePlate.jsx"
+
 function Home() {
-  return(
+  return (
     <>
-      <Background/>
-      <Header/>
-      <Introduction/>
-      <FamiliarTools/>
-      <AboutMe/>
-      <Projects/>
-      <Footer/>
+
+      <Background />
+      <Header />
+      <Introduction />
+      <FamiliarTools />
+      <AboutMe />
+      <Projects />
+      <Footer />
     </>
   );
 }

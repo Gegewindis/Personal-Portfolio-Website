@@ -357,6 +357,9 @@ footer p {
 /* Reactive background container*/
 /* TEST */
 .reactive-bg-container {
+    position: absolute;
+    top: 62px;
+    z-index: -1;
     width: 100%;
     height: 500px;
     /* perspective: 600px; */
@@ -365,7 +368,6 @@ footer p {
     flex-wrap: wrap;
     justify-content: space-evenly;
     overflow: hidden;
-
 }
 
 @media (max-width: 700px) {

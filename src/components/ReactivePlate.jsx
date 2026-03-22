@@ -13,18 +13,28 @@ function ReactivePlate({
     borderStyle = "solid",
     borderColor = "black",
 
-    relateiveMousePos = [0, 0],
-    reactiveMult = 1
+    mousePos = [0, 0],
+    reactiveMult = 1,
+    animationTime = 0.3,
+
+    dimensions = null
 
 }) {
     const ref = useRef(null)
     const [center, setCenter] = useState([0, 0])
 
-
     useEffect(() => {
         const rect = ref.current.getBoundingClientRect()
         setCenter([rect.left + rect.width / 2, rect.top + rect.height / 2])
     }, [])
+
+    useEffect(() => {
+        const plateRect = ref.current.getBoundingClientRect()
+        setCenter([
+            plateRect.left + plateRect.width / 2,
+            plateRect.top + plateRect.height / 2
+        ])
+    }, [dimensions])
 
     const widthSize = parseInt(width)
     const reactiveRadius = widthSize * widthSize * reactiveMult
@@ -53,21 +63,11 @@ function ReactivePlate({
         borderStyle: borderStyle,
         borderColor: borderColor,
 
-        //      formula for perpendicular vector 
-        // V = (center[0] - relateiveMousePos[0], center[1] - relateiveMousePos[1])
-        // U = (-V[1], V[0]) for counterclockwise
-        // U = (V[1], -V[0]) for clockwise
+        zIndex: -10,
 
-        //      formula for deg
-        // V = (center[0] - relateiveMousePos[0], center[1] - relateiveMousePos[1])
-        // Vlen = sqrt(V[0]^2 + V[1]^2)
-        // if vLen > width:
-        //  
-        rotate: `${relateiveMousePos[1] - center[1]} ${center[0] - relateiveMousePos[0]} 0 ${calcDeg(relateiveMousePos, center)}deg`,
+        rotate: `${mousePos[1] - center[1]} ${center[0] - mousePos[0]} 0 ${calcDeg(mousePos, center)}deg`,
+        transition: `rotate ${animationTime}s ease-out`
     }
-
-    //console.log(plateStyle.rotate)
-    //console.log(center)
 
     return <>
         <div style={plateStyle} ref={ref}></div>

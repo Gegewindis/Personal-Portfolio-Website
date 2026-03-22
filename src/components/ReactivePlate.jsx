@@ -16,6 +16,7 @@ function ReactivePlate({
     mousePos = [0, 0],
     reactiveMult = 1,
     animationTime = 0.3,
+    zIndex = "-2",
 
     dimensions = null
 
@@ -63,7 +64,7 @@ function ReactivePlate({
         borderStyle: borderStyle,
         borderColor: borderColor,
 
-        zIndex: -10,
+        zIndex: zIndex,
 
         rotate: `${mousePos[1] - center[1]} ${center[0] - mousePos[0]} 0 ${calcDeg(mousePos, center)}deg`,
         transition: `rotate ${animationTime}s ease-out`

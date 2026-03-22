@@ -18,9 +18,9 @@ function Home() {
   const ref = useRef(null)
 
   const plateMargin = 3
-  const plateSize = (window.innerWidth / 100) - plateMargin * 2
+  const plateSize = (window.innerWidth / 25) - plateMargin * 2
   const cols = Math.floor(window.innerWidth / (plateSize + plateMargin))
-  const rows = Math.floor(400 / (plateSize + plateMargin)) + 1
+  const rows = Math.floor(400 / (plateSize + plateMargin)) + 2
   const plateCount = cols * rows
 
   console.log((window.innerWidth - (plateMargin * 4)))
@@ -33,7 +33,7 @@ function Home() {
 
   return (
     <>
-      <div className="reactive-bg-container" ref={ref} onMouseMove={handleMovement} onMouseLeave={() => { setMousePos([-100, -100]) }}>
+      <div className="reactive-bg-container" ref={ref} onMouseMove={handleMovement}>
         {Array.from({ length: plateCount }, (_, i) =>
           <ReactivePlate
             key={i}

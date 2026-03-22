@@ -359,7 +359,7 @@ footer p {
 .reactive-bg-container {
     width: 100%;
     height: 500px;
-    perspective: 600px;
+    /* perspective: 600px; */
 
     display: flex;
     flex-wrap: wrap;

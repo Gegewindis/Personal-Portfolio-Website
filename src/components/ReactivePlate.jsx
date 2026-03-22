@@ -29,6 +29,7 @@ function ReactivePlate({
     const widthSize = parseInt(width)
     const reactiveRadius = widthSize * widthSize * reactiveMult
     function calcDeg(mousePos, centerPos) {
+        if (mousePos[0] == 0 && mousePos[1] == 0) { return 0 }
         const vx = centerPos[0] - mousePos[0]
         const vy = centerPos[1] - mousePos[1]
         const vectorLenSq = vx * vx + vy * vy
@@ -36,9 +37,7 @@ function ReactivePlate({
             const vectorLen = Math.sqrt(vectorLenSq)
             return ((widthSize * reactiveMult - vectorLen) / (widthSize * reactiveMult)) * 90
         }
-        else {
-            return 0
-        }
+        return 0
     }
 
     const plateStyle = {

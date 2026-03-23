@@ -1,4 +1,4 @@
-import { memo } from "react"
+import { useRef, useEffect, useState } from "react"
 
 function ReactivePlate({
     width = "50px",
@@ -59,6 +59,4 @@ function ReactivePlate({
     </>
 }
 
-export default memo(ReactivePlate, (prev, next) => {
-    return prev.mousePos[0] === next.mousePos[0] && prev.mousePos[1] === next.mousePos[1]
-})
+export default ReactivePlate

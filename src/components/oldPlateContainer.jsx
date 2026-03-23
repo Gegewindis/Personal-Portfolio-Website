@@ -1,4 +1,4 @@
-import { useRef, useState, useEffect, useMemo } from "react"
+import { useRef, useState, useEffect } from "react"
 import ReactivePlate from "./ReactivePlate"
 
 function ReactivePlatesContainer({
@@ -37,23 +37,20 @@ function ReactivePlatesContainer({
 
 
     // Options
-    mouseRef = null,
+    mousePos = [0, 0],
     reactiveMult = 1,
     animationTime = 0.3,
     plateZIndex = -2,
 
 }) {
     const ref = useRef(null)
-    const [mousePos, setMousePos] = useState([0, 0])
-    const xOffsetRef = useRef(0)
-    const yOffsetRef = useRef(0)
-
     const plateMarginInt = parseInt(plateMargin)
     const plateWidthInt = parseInt(plateWidth)
     const plateHeightInt = parseInt(plateHeight)
     const columnGapInt = parseInt(columnGap)
     const rowGapInt = parseInt(rowGap)
-    const reactiveRadius = plateWidthInt * plateWidthInt * reactiveMult
+    const topOffsetInt = parseInt(containerYOffset)
+    const containerXOffsetInt = parseInt(containerXOffset)
 
     const [containerWidthInt, setContainerWidthInt] = useState(0)
     const containerHeightInt = parseInt(containerHeight)
@@ -61,20 +58,6 @@ function ReactivePlatesContainer({
     const cols = Math.ceil(containerWidthInt / (plateWidthInt + plateMarginInt))
     const rows = Math.ceil(containerHeightInt / (plateHeightInt + plateMarginInt))
     const plateCount = cols * rows
-
-    const plates = useMemo(() => {
-        const arr = []
-        for (let i = 0; i < plateCount; i++) {
-            const row = Math.floor(i / cols)
-            const col = i % cols
-            const center = [
-                col * columnGapInt + col * plateWidthInt + plateWidthInt / 2,
-                row * rowGapInt + row * plateHeightInt + plateHeightInt / 2
-            ]
-            arr.push({ id: i, center })
-        }
-        return arr
-    }, [plateCount, cols, columnGapInt, plateWidthInt, rowGapInt, plateHeightInt])
 
 
     const containerStyle = {
@@ -107,29 +90,7 @@ function ReactivePlatesContainer({
     }
 
     useEffect(() => {
-        const timer = setTimeout(() => {
-            const element = mouseRef?.current ?? ref.current
-            if (!element) return
-
-            function handleMouseMove(e) {
-                setMousePos([e.clientX - xOffsetRef.current + window.scrollX, e.clientY - yOffsetRef.current + window.scrollY])
-            }
-            function handleMouseLeave() {
-                setMousePos([0, 0])
-            }
-
-            element.addEventListener("mousemove", handleMouseMove)
-            element.addEventListener("mouseleave", handleMouseLeave)
-        }, 0)
-
-        return () => clearTimeout(timer)
-    }, [])
-
-    useEffect(() => {
-        const rect = ref.current.getBoundingClientRect()
-        setContainerWidthInt(rect.width)
-        xOffsetRef.current = rect.left
-        yOffsetRef.current = rect.top
+        setContainerWidthInt(ref.current.getBoundingClientRect().width)
     }, [])
 
     useEffect(() => {
@@ -142,18 +103,18 @@ function ReactivePlatesContainer({
 
     return (
         <div style={containerStyle} ref={ref} >
-            {plates.map(plate => {
-                const vx = plate.center[0] - mousePos[0]
-                const vy = plate.center[1] - mousePos[1]
-                const vectorLenSq = vx * vx + vy * vy
+            {Array.from({ length: plateCount }, (_, i) => {
+                const row = Math.floor(i / cols)
+                const col = i % cols
+                const center = [col * columnGapInt + col * plateWidthInt + plateWidthInt / 2, row * rowGapInt + row * plateHeightInt + plateHeightInt / 2]
 
                 return (
                     <ReactivePlate
-                        key={plate.id}
+                        key={i}
                         height={plateHeight}
                         width={plateWidth}
                         margin={plateMargin}
-                        mousePos={(vectorLenSq <= reactiveRadius * reactiveMult) ? mousePos : [0, 0]}
+                        mousePos={(mousePos[0] == 0 && mousePos[1] == 0) ? [0, 0] : [mousePos[0] - containerXOffsetInt, mousePos[1] - topOffsetInt]}
                         backgroundColor={plateColor}
                         borderRadius={plateBorderRadius}
                         borderColor={plateBorderColor}
@@ -162,7 +123,7 @@ function ReactivePlatesContainer({
                         reactiveMult={reactiveMult}
                         animationTime={animationTime}
                         zIndex={plateZIndex}
-                        center={plate.center}
+                        center={center}
                     />
                 )
             })}

@@ -20,7 +20,17 @@ function Home() {
     <>
       <Header />
       <Background />
-      <PlatesContainer mousePos={mousePos} containerHeight="500px" containerTopOffset="60px" plateColor="var(--color-header)" reactiveMult={5} />
+      <PlatesContainer
+        mousePos={mousePos}
+        containerHeight="500px"
+        containerYOffset="63px"
+        plateColor="var(--color-header)"
+        reactiveMult={5}
+        plateBorderRadius="10px"
+        plateBorderColor="hsl(300, 50%, 15%)"
+        plateBorderWidth="3px"
+        containerXOffset="30px"
+      />
       <div onMouseMove={handleMovement} onMouseLeave={() => { setMousePos([0, 0]) }}>
         <Introduction />
         <FamiliarTools />

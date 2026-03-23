@@ -18,25 +18,9 @@ function ReactivePlate({
     animationTime = 0.3,
     zIndex = "-2",
 
-    dimensions = null
+    center = [0, 0],
 
 }) {
-    const ref = useRef(null)
-    const [center, setCenter] = useState([0, 0])
-
-    useEffect(() => {
-        const rect = ref.current.getBoundingClientRect()
-        setCenter([rect.left + rect.width / 2, rect.top + rect.height / 2])
-    }, [])
-
-    useEffect(() => {
-        const plateRect = ref.current.getBoundingClientRect()
-        setCenter([
-            plateRect.left + plateRect.width / 2,
-            plateRect.top + plateRect.height / 2
-        ])
-    }, [dimensions])
-
     const widthSize = parseInt(width)
     const reactiveRadius = widthSize * widthSize * reactiveMult
     function calcDeg(mousePos, centerPos) {
@@ -71,7 +55,7 @@ function ReactivePlate({
     }
 
     return <>
-        <div style={plateStyle} ref={ref}></div>
+        <div style={plateStyle}></div>
     </>
 }
 

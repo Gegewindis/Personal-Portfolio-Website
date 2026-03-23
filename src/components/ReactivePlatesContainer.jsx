@@ -7,12 +7,16 @@ function ReactivePlatesContainer({
     containerMargin = "0px",
     containerPadding = "0px",
 
+    containerYOffset = "0px",
+    containerXOffset = "0px",
+    columnGap = "3px",
+    rowGap = "3px",
+
     containerColor = "transparent",
 
     containerPosition = "absolute",
-    containerTopOffset = "0px",
     containerZIndex = "-1",
-    containerPerspective = "",
+    perspective = "",
 
     containerBorderRadius = "0px",
     containerBorderWidth = "0px",
@@ -22,8 +26,7 @@ function ReactivePlatesContainer({
     // Plate CSS
     plateWidth = "75px",
     plateHeight = "75px",
-    platePadding = "0px", // Not using in calculations!!
-    plateMargin = "3px",
+    plateMargin = "0px",
 
     plateColor = "hsl(0, 0%, 100%)",
 
@@ -38,7 +41,24 @@ function ReactivePlatesContainer({
     reactiveMult = 1,
     animationTime = 0.3,
     plateZIndex = -2,
+
 }) {
+    const ref = useRef(null)
+    const plateMarginInt = parseInt(plateMargin)
+    const plateWidthInt = parseInt(plateWidth)
+    const plateHeightInt = parseInt(plateHeight)
+    const columnGapInt = parseInt(columnGap)
+    const rowGapInt = parseInt(rowGap)
+    const topOffsetInt = parseInt(containerYOffset)
+    const containerXOffsetInt = parseInt(containerXOffset)
+
+    const [containerWidthInt, setContainerWidthInt] = useState(0)
+    const containerHeightInt = parseInt(containerHeight)
+
+    const cols = Math.ceil(containerWidthInt / (plateWidthInt + plateMarginInt))
+    const rows = Math.ceil(containerHeightInt / (plateHeightInt + plateMarginInt))
+    const plateCount = cols * rows
+
 
     const containerStyle = {
         width: containerWidth,
@@ -55,50 +75,46 @@ function ReactivePlatesContainer({
 
         position: containerPosition,
         zIndex: containerZIndex,
-        top: containerTopOffset,
-        perspective: containerPerspective,
+        top: containerYOffset,
+        left: containerXOffset,
+        perspective: perspective,
 
-        // Might want to change to grid layout since it gives more predictable center
-        display: "flex",
-        flexWrap: "wrap",
-        justifyContent: "space-evenly",
+        display: "grid",
+        gridTemplateColumns: `repeat(${cols}, 1fr)`,
+        gridTemplateRows: `repeat(${rows}, auto)`,
+        columnGap: columnGap,
+        rowGap: rowGap,
+
         overflow: "hidden",
+
     }
-
-
-
-    // If i pass center it increases performance, need to do that instead
-    const ref = useRef(null)
-    const plateMarginInt = parseInt(plateMargin)
-    const plateWidthInt = parseInt(plateWidth)
-    const plateHeightInt = parseInt(plateHeight)
-    const [containerWidthInt, setContainerWidthInt] = useState(0)
-    const containerHeightInt = parseInt(containerHeight)
-
-    const cols = Math.ceil(containerWidthInt / (plateWidthInt + plateMarginInt))
-    const rows = Math.ceil(containerHeightInt / (plateHeightInt + plateMarginInt))
-    const plateCount = cols * rows
 
     useEffect(() => {
         setContainerWidthInt(ref.current.getBoundingClientRect().width)
     }, [])
 
+    useEffect(() => {
+        function handleResize() {
+            setContainerWidthInt(ref.current.getBoundingClientRect().width)
+        }
+        window.addEventListener("resize", handleResize)
+        return () => window.removeEventListener("resize", handleResize)
+    }, [])
+
     return (
         <div style={containerStyle} ref={ref} >
             {Array.from({ length: plateCount }, (_, i) => {
-                // const col = i % cols
-                // const row = Math.floor(i / cols)
-                // const center = [
-                //     col * (plateWidthInt + plateMarginInt) + plateWidthInt / 2,
-                //     row * (plateHeightInt + plateMarginInt) + plateHeightInt / 2
-                // ]
+                const row = Math.floor(i / cols)
+                const col = i % cols
+                const center = [col * columnGapInt + col * plateWidthInt + plateWidthInt / 2, row * rowGapInt + row * plateHeightInt + plateHeightInt / 2]
+
                 return (
                     <ReactivePlate
                         key={i}
                         height={plateHeight}
                         width={plateWidth}
                         margin={plateMargin}
-                        mousePos={mousePos}
+                        mousePos={(mousePos[0] == 0 && mousePos[1] == 0) ? [0, 0] : [mousePos[0] - containerXOffsetInt, mousePos[1] - topOffsetInt]}
                         backgroundColor={plateColor}
                         borderRadius={plateBorderRadius}
                         borderColor={plateBorderColor}
@@ -107,8 +123,7 @@ function ReactivePlatesContainer({
                         reactiveMult={reactiveMult}
                         animationTime={animationTime}
                         zIndex={plateZIndex}
-
-                    // center={center}
+                        center={center}
                     />
                 )
             })}

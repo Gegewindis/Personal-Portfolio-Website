@@ -21,14 +21,12 @@ function Home() {
         containerHeight="500px"
         containerYOffset="63px"
         plateColor="var(--color-header)"
-        plateWidth="100x"
-        plateHeight="100px"
+        plateWidth="75px"
+        plateHeight="75spx"
         reactiveMult={5}
-        plateBorderRadius="10px"
+        plateBorderRadius="0px"
         plateBorderColor="hsl(300, 50%, 10%)"
         plateBorderWidth="3px"
-      // containerPosition="relative"
-      // containerZIndex="0"
       />
       <div ref={mouseRef}>
         <Introduction />

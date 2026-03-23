@@ -26,7 +26,6 @@ function ReactivePlatesContainer({
     // Plate CSS
     plateWidth = "75px",
     plateHeight = "75px",
-    plateMargin = "0px",
 
     plateColor = "hsl(0, 0%, 100%)",
 
@@ -34,7 +33,6 @@ function ReactivePlatesContainer({
     plateBorderWidth = "0px",
     plateBorderStyle = "solid",
     plateBorderColor = "black",
-
 
     // Options
     mouseRef = null,
@@ -48,7 +46,6 @@ function ReactivePlatesContainer({
     const xOffsetRef = useRef(0)
     const yOffsetRef = useRef(0)
 
-    const plateMarginInt = parseInt(plateMargin)
     const plateWidthInt = parseInt(plateWidth)
     const plateHeightInt = parseInt(plateHeight)
     const columnGapInt = parseInt(columnGap)
@@ -58,8 +55,8 @@ function ReactivePlatesContainer({
     const [containerWidthInt, setContainerWidthInt] = useState(0)
     const containerHeightInt = parseInt(containerHeight)
 
-    const cols = Math.ceil(containerWidthInt / (plateWidthInt + plateMarginInt))
-    const rows = Math.ceil(containerHeightInt / (plateHeightInt + plateMarginInt))
+    const cols = Math.ceil(containerWidthInt / (plateWidthInt + columnGapInt))
+    const rows = Math.ceil(containerHeightInt / (plateHeightInt + rowGapInt))
     const plateCount = cols * rows
 
     const plates = useMemo(() => {
@@ -97,8 +94,8 @@ function ReactivePlatesContainer({
         perspective: perspective,
 
         display: "grid",
-        gridTemplateColumns: `repeat(${cols}, 1fr)`,
-        gridTemplateRows: `repeat(${rows}, auto)`,
+        gridTemplateColumns: `repeat(${cols}, ${plateWidth})`,
+        gridTemplateRows: `repeat(${rows}, ${plateHeight})`,
         columnGap: columnGap,
         rowGap: rowGap,
 
@@ -112,6 +109,7 @@ function ReactivePlatesContainer({
             if (!element) return
 
             function handleMouseMove(e) {
+                // console.log(e.clientX - xOffsetRef.current + window.scrollX, e.clientY - yOffsetRef.current + window.scrollY)
                 setMousePos([e.clientX - xOffsetRef.current + window.scrollX, e.clientY - yOffsetRef.current + window.scrollY])
             }
             function handleMouseLeave() {
@@ -152,7 +150,6 @@ function ReactivePlatesContainer({
                         key={plate.id}
                         height={plateHeight}
                         width={plateWidth}
-                        margin={plateMargin}
                         mousePos={(vectorLenSq <= reactiveRadius * reactiveMult) ? mousePos : [0, 0]}
                         backgroundColor={plateColor}
                         borderRadius={plateBorderRadius}

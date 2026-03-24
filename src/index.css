@@ -1,6 +1,7 @@
 :root {
     --color-black-background: hsl(0, 60%, 2%);
     --color-grey-dark-background: hsl(0, 15%, 5%);
+    --color-grey-lighter: hsl(0, 14%, 15%);
     --color-white: hsl(0, 0%, 100%);
     --color-wine-red: hsl(345, 55%, 4%);
     --color-red-highlight: hsl(0, 94%, 30%);
@@ -114,42 +115,61 @@ body {
 
 .profile-links * {
     padding-left: 7px;
+    align-items: center;
     font-size: 50px;
 }
 
+/* Tech scroll */
+@keyframes techScrolling {
+    from {
+        transform: translateX(0);
+    }
 
-/*  Familiar tools  */
-.familiar-tools-container {
-    padding-left: 10%;
-    padding-right: 10%;
-    height: auto;
+    to {
+        transform: translate(-50%);
+    }
+
+}
+
+.tech-scroll-container {
+    width: fit-content;
+    height: 200px;
     display: flex;
-    flex-direction: column;
+    align-items: center;
+    border-top: 1px solid var(--color-grey-lighter);
+
     overflow: hidden;
-    align-items: center;
+
+
+    animation: techScrolling 20s linear infinite;
 }
 
-.familiar-tools-header {
-    margin-top: 40px;
-}
 
-.familiar-tools-list {
-    width: 100%;
-    margin-left: 3vw;
-    margin-right: 3vw;
+
+.tech-scroll-item {
+    margin: 5px;
+    height: 125px;
+    width: 350px;
+    border-radius: 10px;
+    border: 1px solid var(--color-grey-lighter);
+    background-color: var(--color-grey-dark-background);
+
+
     display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: space-between;
     align-items: center;
-    margin-top: 20px;
-    margin-bottom: 40px;
+
+
 }
 
-.familiar-tools-list i:hover {
-    transform: scale(1.15);
+.tech-scroll-item i {
+    font-size: 60px;
+    margin: 30px;
 }
 
+.tech-scroll-item h1 {
+    text-align: center;
+    width: 100%;
+}
 
 /*  About Me  */
 .about-me-container {

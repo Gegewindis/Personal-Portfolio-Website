@@ -121,7 +121,7 @@ function ReactivePlatesContainer({
         }, 0)
 
         return () => clearTimeout(timer)
-    }, [])
+    }, [mouseRef])
 
     useEffect(() => {
         const rect = ref.current.getBoundingClientRect()

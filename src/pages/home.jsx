@@ -21,39 +21,27 @@ function Home() {
           { to: "/Personal-Portfolio-Website/#projects", text: "Projects" }
         ]} />
 
+      <div ref={mouseRef} ><Introduction /></div>
       <PlatesContainer
+        mouseRef={mouseRef}
         containerHeight="900px"
         containerYOffset="75px"
         plateWidth="77px"
         plateHeight="77px"
         plateColor="var(--color-black-background)"
-        plateBorderColor="var(--color-wine-red)"
-        plateBorderWidth="3px"
+        plateBorderColor="var(--color-grey-lighter) "// hsl(345, 55%, 8%)
+        plateBorderWidth="2px"
         plateBorderRadius="10px"
+        reactiveMult={4}
       />
 
-      <Introduction ref={mouseRef} />
+      <FamiliarTools />
+
 
       {/* <Background /> */}
-      {/* <PlatesContainer
-        mouseRef={mouseRef}
-        containerHeight="500px"
-        containerYOffset="63px"
-        plateColor="var(--color-header)"
-        plateWidth="75px"
-        plateHeight="75spx"
-        reactiveMult={5}
-        plateBorderRadius="0px"
-        plateBorderColor="hsl(300, 50%, 10%)"
-        plateBorderWidth="3px"
-      /> */}
 
-      {/* <div ref={mouseRef}>
-        
-        <FamiliarTools />
-      </div> */}
-      {/* <AboutMe />
-      <Projects />
+      {/* <AboutMe /> */}
+      {/* <Projects />
       <Footer /> */}
     </>
   );

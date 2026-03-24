@@ -1,22 +1,34 @@
 
 function FamiliarTools() {
-    const tools = ["fa-brands fa-python fa-3x", "fa-brands fa-html5 fa-3x", 
-                    "fa-brands fa-css fa-3x", "fa-solid fa-database fa-3x",
-                    "fa-brands fa-git-alt fa-3x", "fa-brands fa-react fa-3x",
-                    "fa-brands fa-flutter fa-3x", "fa-brands fa-github fa-3x",
-                    "fa-brands fa-discord fa-3x"]
+    const techs = [
+        ["devicon-python-plain", "Python"],
+        ["devicon-react-original", "React"],
+        ["devicon-qt-original", "Qt"],
+        ["devicon-azuresqldatabase-plain", "MySQL"],
+        ["devicon-c-original", "C"],
+        ["devicon-javascript-plain", "JavaSript"]
+    ]
 
 
-    return(
-        <div className="familiar-tools-container">
-            <div className="familiar-tools-header">
-                    <h2>Familiar tools</h2>
+    return (
+        <div style={{ overflow: "hidden" }}>
+            <div className="tech-scroll-container">
+                {techs.map((tech, index) =>
+                    <div key={index} className="tech-scroll-item">
+                        <i className={tech[0]}></i>
+                        <h1>{tech[1]}</h1>
+
+                    </div>
+                )}
+                {techs.map((tech, index) =>
+                    <div key={index} className="tech-scroll-item">
+                        <i className={tech[0]}></i>
+                        <h1>{tech[1]}</h1>
+
+                    </div>
+                )}
+
             </div>
-
-            <div className="familiar-tools-list"> 
-                {tools.map((tool, index) => (<i key={index} className={tool}></i>))}
-            </div>
-
         </div>
     );
 }

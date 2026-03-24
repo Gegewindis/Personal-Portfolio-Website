@@ -14,9 +14,28 @@ function Home() {
 
   return (
     <>
-      <Header />
-      <Background />
+      <Header
+        backgroundColor="var(--color-grey-dark-background)"
+        menus={[
+          { to: "/Personal-Portfolio-Website/#about-me", text: "About Me" },
+          { to: "/Personal-Portfolio-Website/#projects", text: "Projects" }
+        ]} />
+
       <PlatesContainer
+        containerHeight="900px"
+        containerYOffset="75px"
+        plateWidth="77px"
+        plateHeight="77px"
+        plateColor="var(--color-black-background)"
+        plateBorderColor="var(--color-wine-red)"
+        plateBorderWidth="3px"
+        plateBorderRadius="10px"
+      />
+
+      <Introduction ref={mouseRef} />
+
+      {/* <Background /> */}
+      {/* <PlatesContainer
         mouseRef={mouseRef}
         containerHeight="500px"
         containerYOffset="63px"
@@ -27,15 +46,15 @@ function Home() {
         plateBorderRadius="0px"
         plateBorderColor="hsl(300, 50%, 10%)"
         plateBorderWidth="3px"
-      />
-      <div ref={mouseRef}>
-        <Introduction />
-        <FamiliarTools />
-      </div>
+      /> */}
 
-      <AboutMe />
+      {/* <div ref={mouseRef}>
+        
+        <FamiliarTools />
+      </div> */}
+      {/* <AboutMe />
       <Projects />
-      <Footer />
+      <Footer /> */}
     </>
   );
 }

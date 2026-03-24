@@ -1,5 +1,5 @@
 
-function FamiliarTools() {
+function ScrollinTech() {
     const techs = [
         ["devicon-python-plain", "Python"],
         ["devicon-react-original", "React"],
@@ -33,4 +33,4 @@ function FamiliarTools() {
     );
 }
 
-export default FamiliarTools
+export default ScrollinTech

@@ -82,7 +82,15 @@ function Header({
             <nav style={menuContainerStyle}>
                 <ul style={menuNavStyle}>
                     {menus.map((choice, index) => {
-                        return <HashLink key={index} to={choice.to}>{choice.text}</HashLink>
+                        return <HashLink
+                            key={index}
+                            to={choice.to}
+                            scroll={el => {
+                                const top = el.getBoundingClientRect().top + window.scrollY - choice.offset
+                                window.scrollTo({ top, behavior: 'smooth' })
+                            }} >
+                            {choice.text}
+                        </HashLink>
                     })}
                 </ul>
             </nav>

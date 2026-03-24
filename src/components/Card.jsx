@@ -29,6 +29,7 @@ function Card({
     titleMarginLeft = "0px",
     titleFontSize = "25px",
     titleColor = "",
+    titleFontFamily = "",
 
     // Line CSS
     lineMarginTop = "10px",
@@ -40,21 +41,24 @@ function Card({
     paragraphMargin = "0px",
     paragraphMarginLeft = "0px",
     paragraphFontSize = "15px",
+    paragraphFontFamily = "",
 
     // Text Container CSS
-    textPadding = "20px", 
+    textPadding = "20px",
 
     // Image CSS
     imageWidth = "100%",
     imageHeight = "",
     imageObjectFit = "cover",
     imageObjectPosition = "top left",
+    imageMargin = "0px",
 
     // Options
     imageOn = false,
     titleOn = true,
     lineOn = true,
     paragraphOn = true,
+    hover = true,
 
     // Content
     titleText = "Title Example",
@@ -68,7 +72,7 @@ function Card({
     const cardStyle = {
         width: width,
         height: height,
-        padding: padding, 
+        padding: padding,
         margin: margin,
 
         backgroundColor: backgroundColor,
@@ -80,7 +84,7 @@ function Card({
 
         transition: transition,
 
-        overflow: overflow, 
+        overflow: overflow,
         display: display,
         flexDirection: flexDirection,
     }
@@ -95,7 +99,9 @@ function Card({
         margin: titleMargin,
         marginLeft: titleMarginLeft,
         fontSize: titleFontSize,
-        color: titleColor
+        color: titleColor,
+        fontFamily: titleFontFamily
+
     }
 
     const lineStyle = {
@@ -108,32 +114,35 @@ function Card({
     const paragraphStyle = {
         fontSize: paragraphFontSize,
         margin: paragraphMargin,
-        marginLeft: paragraphMarginLeft
+        marginLeft: paragraphMarginLeft,
+        fontFamily: paragraphFontFamily,
     }
 
     const imageStyle = {
         width: imageWidth,
         height: imageHeight,
+        marginTop: imageMargin,
+        marginLeft: imageMargin,
         objectFit: imageObjectFit,
         objectPosition: imageObjectPosition,
     }
 
-    const textContainerStyle =  {
+    const textContainerStyle = {
         padding: textPadding
     }
 
     const card = (
-        <div style={isHovered ? hoveredCardStyle : cardStyle} onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
+        <div style={isHovered && hover ? hoveredCardStyle : cardStyle} onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
             {imageOn ? <img src={imageSrc} alt={imageAlt} style={imageStyle} /> : null}
             <div style={textContainerStyle}>
                 {titleOn ? <h1 style={titleStyle}>{titleText}</h1> : null}
-                {lineOn ? <hr style={lineStyle}/> : null}
+                {lineOn ? <hr style={lineStyle} /> : null}
                 {paragraphOn ? <p style={paragraphStyle}>{paragraphText}</p> : null}
             </div>
         </div>
     )
 
-    return toLink ? <Link to={toLink}>{card}</Link> : card; 
+    return toLink ? <Link to={toLink}>{card}</Link> : card;
 }
 
 export default Card

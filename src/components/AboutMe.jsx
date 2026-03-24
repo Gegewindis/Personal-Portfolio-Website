@@ -1,36 +1,66 @@
-import AboutMeCard from "./AboutMeCard.jsx"
+import Card from "./Card.jsx"
+import wrenchIcon from "../assets/images/Wrench.svg"
+import leafIcon from "../assets/images/Leaf.svg"
+import personIcon from "../assets/images/Person.svg"
 
 function AboutMe() {
-    return(
+    const contents = [
+        {
+            icon: personIcon,
+            title: "Who am I?",
+            text: `My name is George and I am from Sweden.I 
+            am currently studying computer science at Blekinge Tekniska Hösgskola 
+            (BTH) in Karlskrona, Sweden where I will be getting my masters in AI 
+            and machine learning!`},
+        {
+            icon: wrenchIcon,
+            title: "My expertise",
+            text: `I have a strong interest in software, with a primary focus on 
+            backend development. I specialize in Python but I am also familiar with 
+            several other languages. Additionally, I have personal experience with 
+            frontend development. I have been programming for approximately 5 years.`
+        },
+        {
+            icon: leafIcon,
+            title: "Free time",
+            text: `In my spare time you can find me either playing videogames, 
+            programing different projects or hanging out with friends and family.`
+        }
+    ]
+
+
+
+    return (
         <div className="about-me-container" id="about-me">
             <div className="about-me-header">
-                    <h1>About Me</h1>
+                <h1>About Me</h1>
             </div>
 
             <div className="about-me-content">
-                <AboutMeCard icon="fa-solid fa-user fa-3x" title="Who am I?" 
-                    text="                                          
-                        My name is George and I
-                        am from Sweden. I am currently
-                        studying computer science at Blekinges
-                        Tekniska Högskola (BTH) in Karlskrona
-                        Sweden, where I will get my masters in
-                        AI & Machine learning."/>
-
-                <AboutMeCard icon="fa-brands fa-python fa-3x" title="My expertise" 
-                    text="                                          
-                        I have a strong interest in programming,
-                        with a primary focus on backend development.
-                        I specialize in Python but am also familiar with
-                        several other languages. Additionally,
-                        I have personal experience with frontend development.
-                        I have been programming for approximately 4 years."/>
-
-                <AboutMeCard icon="fa-brands fa-pagelines fa-3x" title="Free time" 
-                    text="                                          
-                        In my free time you can find me either playing videogames,
-                        programing different side-projects or
-                        hanging out with my friends and family."/>
+                {contents.map((content, index) =>
+                    <Card
+                        key={index}
+                        imageSrc={content.icon}
+                        margin="50px"
+                        width="500px"
+                        height="600px"
+                        imageWidth="60px"
+                        imageOn={true}
+                        imageHeight="60px"
+                        backgroundColor="var(--color-black-background)"
+                        borderRadius="0px"
+                        imageMargin="20px"
+                        lineOn={false}
+                        titleText={content.title}
+                        titleColor=""
+                        titleFontFamily="var(--font-normal)"
+                        titleFontSize="29px"
+                        paragraphFontFamily="var(--font-normal)"
+                        paragraphFontSize="23px"
+                        paragraphText={content.text}
+                        hover={false}
+                    />
+                )}
 
             </div>
         </div>

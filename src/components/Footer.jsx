@@ -1,8 +1,8 @@
 function Footer() {
 
-    return(
+    return (
         <footer>
-                <p>Lastly, this website is anothor project made by me using react!</p>
+            <p>&copy; 2026 George</p>
         </footer>
     );
 }

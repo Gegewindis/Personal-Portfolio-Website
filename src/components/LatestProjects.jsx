@@ -1,4 +1,4 @@
-import Elips from "./Elips.jsx"
+import Elipse from "./Elipse.jsx"
 
 import infiniteLoldleImg from "../assets/images/infinite_loldle_project.png"
 import veloDataImg from "../assets/images/velodata_project.png"
@@ -19,7 +19,7 @@ function LatestProjects() {
 
     return (
         <div className="latest-current-container">
-            <Elips
+            <Elipse
                 backgroundColor="var(--color-wine-red)"
                 width="500px"
                 height="500px"
@@ -27,7 +27,7 @@ function LatestProjects() {
                 left="-150px"
             />
 
-            <Elips
+            <Elipse
                 backgroundColor="var(--color-wine-red)"
                 width="220px"
                 height="220px"
@@ -35,7 +35,7 @@ function LatestProjects() {
                 left="700px"
             />
 
-            <Elips
+            <Elipse
                 backgroundColor="var(--color-wine-red)"
                 width="650px"
                 height="650px"

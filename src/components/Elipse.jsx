@@ -1,4 +1,4 @@
-function Circle({
+function Elipse({
     height = "100px",
     width = "100px",
 
@@ -35,4 +35,4 @@ function Circle({
     return (<div style={styles}></div>);
 }
 
-export default Circle
+export default Elipse

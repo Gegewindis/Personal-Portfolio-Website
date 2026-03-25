@@ -14,40 +14,38 @@ function Projects() {
             title: "VeloData",
             text: "A tool I made which lets you transfer up to +256TB encrypted files on the same network with the help using TCP and the QT framework.",
             image: velodataImage,
-            _url: "/Personal-Portfolio-Website/velodata_project",
+            _url: "/Personal-Portfolio-Website/Project-Page/:VeloData",
         },
         {
             title: "Infinite Loldle",
             text: "A small website I created with a friend. It is very much like the popular game 'Loldle', the difference being that this one is infinite!",
             image: infinitelImage,
-            _url: "/Personal-Portfolio-Website/infinite_loldle_project",
+            _url: "/Personal-Portfolio-Website/Project-Page/:Infinite-Loldle",
         },
         {
             title: "Pygame Level Editor",
             text: "A well fledged tool I worked on in pygame. This tool helps developers when creating game maps using different assets and tilesets. I learned how to use git, notion and more!",
             image: editorImage,
-            _url: "/Personal-Portfolio-Website/editor_project",
+            _url: "/Personal-Portfolio-Website/Project-Page/:Pygame-Level-Editor",
         },
         {
             title: "FloodFill",
             text: "A project I worked on for one of my starting programming courses. This game is built with python using the library pygame!",
             image: flodfillImage,
-            _url: "/Personal-Portfolio-Website/floodfill_project",
+            _url: "/Personal-Portfolio-Website/Project-Page/:FloodFill",
         },
         {
             title: "SimSim",
             text: "A project I worked on for another one of my programming courses. This simulation is built with python. My first project where I used object oriented programming.",
             image: simsimImage,
-            _url: "/Personal-Portfolio-Website/floodfill_project",
+            _url: "/Personal-Portfolio-Website/Project-Page/:SimSim",
         },
         {
             title: "Malicus",
             text: "A project of a lyrics website that I made using only HTML and CSS! This was my first try at making a website.",
             image: malicusImage,
-            _url: "/Personal-Portfolio-Website/malicus_project",
+            _url: "/Personal-Portfolio-Website/Project-Page/:Malicus",
         }]
-
-
 
     return (
         <div className="Projects-container">

@@ -279,7 +279,6 @@ footer p {
 
 /* Project Pages */
 .project-text {
-    width: 100%;
     height: fit-content;
     display: flex;
     flex-direction: column;
@@ -288,6 +287,9 @@ footer p {
     padding-right: 18vw;
     padding-top: 100px;
     padding-bottom: 100px;
+
+    position: relative;
+    overflow: hidden;
 }
 
 .project-text-header-container {
@@ -306,6 +308,9 @@ footer p {
 
 .project-text p {
     line-height: 1.6;
+    margin-bottom: 1rem;
+    font-size: 20px;
+    font-family: var(--font-normal);
 }
 
 
@@ -317,7 +322,7 @@ footer p {
     width: 100%;
     min-height: 800px;
     padding: 2rem;
-    background-color: var(--color-header);
+    background-color: var(--color-grey-dark-background);
 
     column-count: 4;
     column-gap: 1.5rem;
@@ -330,6 +335,10 @@ footer p {
     border-radius: 8px;
     break-inside: avoid;
     transition: transform 0.4s ease;
+}
+
+.gallery-container img:hover {
+    transform: scale(1.15);
 }
 
 @media (max-width: 700px) {
@@ -352,10 +361,4 @@ footer p {
         width: 200px;
         border-left: 0px solid var(--color-white);
     }
-
-
-}
-
-.gallery-container img:hover {
-    transform: scale(1.15);
 }

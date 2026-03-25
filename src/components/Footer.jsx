@@ -1,10 +1,10 @@
-import Elips from "./Elips.jsx"
+import Elipse from "./Elipse.jsx"
 
 function Footer() {
 
     return (
         <footer>
-            <Elips
+            <Elipse
                 width="500px"
                 height="500px"
                 top="-200px"
@@ -13,7 +13,7 @@ function Footer() {
                 zIndex="1"
             />
 
-            <Elips
+            <Elipse
                 width="300px"
                 height="300px"
                 top="-180px"

@@ -18,7 +18,7 @@ function AboutMe() {
             text: `I have a strong interest in software, with a primary focus on 
             backend development. I specialize in Python but I am also familiar with 
             several other languages. Additionally, I have personal experience with 
-            frontend development. I have been programming for approximately 5 years.`
+            fullstack development. I have been programming for approximately 5 years.`
         },
         {
             icon: leafIcon,
@@ -32,7 +32,7 @@ function AboutMe() {
 
     return (
         <div className="about-me-container" id="about-me">
-            <div className="about-me-header">
+            <div className="content-title">
                 <h1>About Me</h1>
             </div>
 
@@ -42,6 +42,7 @@ function AboutMe() {
                         key={index}
                         imageSrc={content.icon}
                         margin="50px"
+                        padding="20px"
                         width="500px"
                         height="600px"
                         imageWidth="60px"

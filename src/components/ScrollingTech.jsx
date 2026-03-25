@@ -1,5 +1,4 @@
-
-function ScrollinTech() {
+function ScrollingTech() {
     const techs = [
         ["devicon-python-plain", "Python"],
         ["devicon-react-original", "React"],
@@ -8,7 +7,6 @@ function ScrollinTech() {
         ["devicon-c-original", "C"],
         ["devicon-javascript-plain", "JavaSript"]
     ]
-
 
     return (
         <div style={{ overflow: "hidden" }}>
@@ -33,4 +31,4 @@ function ScrollinTech() {
     );
 }
 
-export default ScrollinTech
+export default ScrollingTech

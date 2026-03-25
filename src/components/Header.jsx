@@ -6,7 +6,7 @@ function Header({
     headerHeight = "75px",
     backgroundColor = "hsL(0, 0%, 0%)",
     padding = "15px",
-    zIndex = "1",
+    zIndex = "10",
     justifyContent = "space-evenly",
     boxShadow = "0px 0px 0px hsL(0, 0%, 0%)",
 

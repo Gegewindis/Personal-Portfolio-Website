@@ -7,6 +7,10 @@ function Card({
     height = "400px",
     padding = "0px",
     margin = "10px",
+    marginTop = undefined,
+    marginBottom = undefined,
+    marginLeft = undefined,
+    marginRight = undefined,
 
     backgroundColor = "hsl(0, 0%, 100%)",
 
@@ -74,6 +78,10 @@ function Card({
         height: height,
         padding: padding,
         margin: margin,
+        marginTop: marginTop ?? margin,
+        marginBottom: marginBottom ?? margin,
+        marginLeft: marginLeft ?? margin,
+        marginRight: marginRight ?? margin,
 
         backgroundColor: backgroundColor,
         borderRadius: borderRadius,
@@ -87,6 +95,7 @@ function Card({
         overflow: overflow,
         display: display,
         flexDirection: flexDirection,
+        flexShrink: "0",
     }
 
     const hoveredCardStyle = {
@@ -142,7 +151,7 @@ function Card({
         </div>
     )
 
-    return toLink ? <Link to={toLink}>{card}</Link> : card;
+    return toLink ? <Link to={toLink} style={{ display: "contents" }}>{card}</Link> : card;
 }
 
 export default Card

@@ -3,8 +3,8 @@ import Introduction from "../components/Introduction.jsx"
 import AboutMe from "../components/AboutMe.jsx"
 import Projects from "../components/Projects.jsx"
 import Footer from "../components/Footer.jsx"
-import Background from "../components/Background.jsx"
-import ScrollinTech from "../components/ScrollinTech.jsx"
+import LatestProjects from "../components/LatestProjects.jsx"
+import ScrollingTech from "../components/ScrollingTech.jsx"
 import PlatesContainer from "../components/ReactivePlatesContainer.jsx"
 
 import { useRef } from "react"
@@ -18,14 +18,14 @@ function Home() {
         backgroundColor="var(--color-grey-dark-background)"
         menus={[
           { to: "/Personal-Portfolio-Website/#about-me", text: "About Me", offset: 80 },
-          { to: "/Personal-Portfolio-Website/#projects", text: "Projects", offset: 0 }
+          { to: "/Personal-Portfolio-Website/#latest", text: "Projects", offset: 80 }
         ]} />
 
       <div ref={mouseRef} ><Introduction /></div>
       <PlatesContainer
         mouseRef={mouseRef}
-        containerHeight="900px"
-        containerYOffset="75px"
+        containerHeight="800px"
+        containerYOffset="78px"
         plateWidth="77px"
         plateHeight="77px"
         plateColor="var(--color-black-background)"
@@ -35,12 +35,13 @@ function Home() {
         reactiveMult={4}
       />
 
-      <ScrollinTech />
+      <ScrollingTech />
 
 
       {/* <Background /> */}
 
       <AboutMe />
+      <LatestProjects />
       <Projects />
       <Footer />
     </>

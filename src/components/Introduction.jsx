@@ -11,8 +11,6 @@ function Introduction() {
                 </div>
 
                 <div className="profile-content-container">
-
-
                     <div className="introduction-title">
                         <h1>George Adrian Bobocea</h1>
                     </div>

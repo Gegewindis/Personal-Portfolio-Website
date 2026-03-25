@@ -6,8 +6,6 @@ import projects from "../data/projects.js";
 import ReactMarkdown from "react-markdown";
 import { useParams } from "react-router-dom";
 
-
-
 function ProjectPage() {
     const { name } = useParams();
     const project = projects[name];

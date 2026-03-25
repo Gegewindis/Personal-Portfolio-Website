@@ -110,7 +110,6 @@ function Card({
         fontSize: titleFontSize,
         color: titleColor,
         fontFamily: titleFontFamily
-
     }
 
     const lineStyle = {

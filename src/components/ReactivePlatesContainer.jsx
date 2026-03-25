@@ -73,7 +73,6 @@ function ReactivePlatesContainer({
         return arr
     }, [plateCount, cols, columnGapInt, plateWidthInt, rowGapInt, plateHeightInt])
 
-
     const containerStyle = {
         width: containerWidth,
         height: containerHeight,

@@ -34,12 +34,7 @@ function Home() {
         plateBorderRadius="10px"
         reactiveMult={4}
       />
-
       <ScrollingTech />
-
-
-      {/* <Background /> */}
-
       <AboutMe />
       <LatestProjects />
       <Projects />

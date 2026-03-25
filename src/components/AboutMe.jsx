@@ -28,8 +28,6 @@ function AboutMe() {
         }
     ]
 
-
-
     return (
         <div className="about-me-container" id="about-me">
             <div className="content-title">

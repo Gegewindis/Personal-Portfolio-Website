@@ -29,7 +29,6 @@ function Elipse({
         borderBottomLeftRadius: bottomLeftRadius,
         borderTopRightRadius: topRightRadius,
         borderTopLeftRadius: topLeftRadius,
-
     }
 
     return (<div style={styles}></div>);

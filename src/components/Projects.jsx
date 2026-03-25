@@ -6,9 +6,7 @@ import editorImage from "../assets/images/editor_project.png"
 import infinitelImage from "../assets/images/infinite_loldle_project.png"
 import velodataImage from "../assets/images/velodata_project.png"
 
-
 function Projects() {
-
     const info = [
         {
             title: "VeloData",

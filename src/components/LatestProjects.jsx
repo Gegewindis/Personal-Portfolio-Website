@@ -1,10 +1,6 @@
 import Elipse from "./Elipse.jsx"
-
 import infiniteLoldleImg from "../assets/images/infinite_loldle_project.png"
 import veloDataImg from "../assets/images/velodata_project.png"
-
-
-
 
 function LatestProjects() {
     const latest = {
@@ -52,7 +48,6 @@ function LatestProjects() {
                     <div className="latest-current-img-overlay"> <h2>{latest.title}</h2> </div>
                     <img src={latest.image} alt={latest.title} />
                 </div>
-
 
             </div>
             <div className="latest-current-sub-container" id="current" style={{ flexDirection: "column-reverse" }}>

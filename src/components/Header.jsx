@@ -18,10 +18,6 @@ function Header({
     // Options
     menus = [],
     houseOn = true,
-
-
-
-
 }) {
     const headerStyle = {
         height: headerHeight,

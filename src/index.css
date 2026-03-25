@@ -9,6 +9,9 @@
 
     --font-techno: "Share Tech Mono", monospace;
     --font-normal: "Syne", sans-serif;
+
+    --size-about-card: 500px;
+    --size-project-card: 550px;
 }
 
 * {
@@ -133,7 +136,8 @@ body {
 }
 
 .profile-links * {
-    padding-left: 7px;
+    padding-left: 3px;
+    padding-right: 3px;
     align-items: center;
     font-size: 50px;
 }
@@ -342,13 +346,23 @@ footer p {
 }
 
 @media (max-width: 700px) {
+    :root {
+        --size-about-me: 350px;
+        --size-project-card: 350px;
+    }
+
+
     .gallery-container {
         column-count: 1;
     }
 
     .introduction-inner-container {
-        width: 500px;
-        height: 400px;
+        width: 300px;
+        height: fit-content;
+        flex-direction: column;
+        padding: 20px;
+
+        text-align: center;
     }
 
     .latest-current-img-overlay h2 {
@@ -359,6 +373,31 @@ footer p {
     .profile-content-container {
         height: 300px;
         width: 200px;
+        padding: 0px;
         border-left: 0px solid var(--color-white);
+        justify-content: center;
+        align-items: center;
     }
+
+    .latest-current-container {
+        flex-direction: column;
+    }
+
+    .content-title-reversed {
+        padding-left: 45px;
+    }
+
+    .latest-current-img-container {
+        margin: 15px;
+    }
+
+    .latest-current-sub-container {
+        width: 100%;
+    }
+
+    .project-text {
+        padding-right: 20px;
+        padding-left: 20px;
+    }
+
 }

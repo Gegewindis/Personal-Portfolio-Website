@@ -10,8 +10,8 @@ function Header({
     justifyContent = "space-evenly",
     boxShadow = "0px 0px 0px hsL(0, 0%, 0%)",
 
-    logoContainerWidth = "fit-content",
-    menuContainerWidth = "250px",
+    logoContainerWidth = "45%",
+    menuContainerWidth = "45%",
 
     fontSize = "25px",
 

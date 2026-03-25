@@ -21,6 +21,8 @@ function ProjectPage() {
     return (
         <>
             <Header
+                menuContainerWidth="var(--header-menu-container)"
+                logoContainerWidth="var(--header-logo-container)"
                 backgroundColor="var(--color-grey-dark-background)"
                 menus={[
                     { to: "/Personal-Portfolio-Website/#about-me", text: "About Me", offset: 80 },

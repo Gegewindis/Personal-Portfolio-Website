@@ -10,8 +10,11 @@
     --font-techno: "Share Tech Mono", monospace;
     --font-normal: "Syne", sans-serif;
 
+    --header-menu-container: 45%;
+    --header-logo-container: 45%;
     --size-about-card: 500px;
     --size-project-card: 550px;
+    --size-project-height: 300px;
 }
 
 * {
@@ -208,7 +211,7 @@ body {
 
 /*latest*/
 .latest-current-container {
-    height: 800px;
+    min-height: 800px;
     background-color: var(--color-black-background);
     display: flex;
     position: relative;
@@ -353,8 +356,10 @@ footer p {
     :root {
         --size-about-card: 350px;
         --size-project-card: 350px;
+        --size-project-height: 100px;
+        --header-menu-container: 250px;
+        --header-logo-container: fit-content;
     }
-
 
     .gallery-container {
         column-count: 1;

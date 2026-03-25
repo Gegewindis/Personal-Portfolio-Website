@@ -65,7 +65,7 @@ function Projects() {
                         marginLeft="100px"
                         marginRight="100px"
                         marginBottom="100px"
-                        marginTop={index % 2 == 0 ? "100px" : "300px"}
+                        marginTop={index % 2 == 0 ? "100px" : "var(--size-project-height)"}
                         lineColor="var(--color-text)"
                         width="var(--size-project-card)"
                         height="700px"

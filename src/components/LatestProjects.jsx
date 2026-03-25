@@ -50,7 +50,7 @@ function LatestProjects() {
                 </div>
 
             </div>
-            <div className="latest-current-sub-container" id="current" style={{ flexDirection: "column-reverse" }}>
+            <div className="latest-current-sub-container" id="current">
                 <div className="content-title-reversed">
                     <h1>Current Project</h1>
                 </div>

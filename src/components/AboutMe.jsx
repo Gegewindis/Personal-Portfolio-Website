@@ -41,7 +41,7 @@ function AboutMe() {
                         imageSrc={content.icon}
                         margin="50px"
                         padding="20px"
-                        width="var(--size-about-me)"
+                        width="var(--size-about-card)"
                         height="600px"
                         imageWidth="60px"
                         imageOn={true}

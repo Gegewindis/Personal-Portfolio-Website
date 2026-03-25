@@ -233,6 +233,10 @@ body {
     width: 100%;
 }
 
+#current {
+    flex-direction: column-reverse;
+}
+
 .latest-current-img-overlay {
     width: 100%;
     top: 70%;
@@ -347,7 +351,7 @@ footer p {
 
 @media (max-width: 700px) {
     :root {
-        --size-about-me: 350px;
+        --size-about-card: 350px;
         --size-project-card: 350px;
     }
 
@@ -383,10 +387,6 @@ footer p {
         flex-direction: column;
     }
 
-    .content-title-reversed {
-        padding-left: 45px;
-    }
-
     .latest-current-img-container {
         margin: 15px;
     }
@@ -398,6 +398,19 @@ footer p {
     .project-text {
         padding-right: 20px;
         padding-left: 20px;
+    }
+
+    #current {
+        flex-direction: column;
+    }
+
+    .content-title-reversed h1 {
+        padding: 0px;
+        padding-left: 45px;
+        padding-top: 45px;
+        text-align: left;
+        font-family: var(--font-normal);
+        font-size: 50px;
     }
 
 }

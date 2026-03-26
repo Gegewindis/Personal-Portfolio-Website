@@ -1,5 +1,5 @@
 const projects = {
-    ":Pygame-Level-Editor": {
+    "Pygame-Level-Editor": {
         title: "Pygame Level Editor",
         text: ` 
 I wanted to make more complex games using Pygame, but I quickly realized that without
@@ -37,7 +37,7 @@ and [README](https://www.notion.so/Read-Me-2894f48fbfc180a2a996e223a0d76ee5?sour
         repoUrl: "https://github.com/Gegewindis/Pygame-Level-Editor"
     },
 
-    ":VeloData": {
+    "VeloData": {
         title: "VeloData",
         text: ` 
 Started off by getting aquainted with the **PySide6** designer tool, since
@@ -68,7 +68,7 @@ You can find this project along with my other projects on my GitHub [here](https
         repoUrl: "https://github.com/Gegewindis/VeloData"
     },
 
-    ":FloodFill": {
+    "FloodFill": {
         title: "FloodFill",
         text: ` 
 My very first school assignment turned into something much bigger than
@@ -98,7 +98,7 @@ and see if you can unlock the secret theme by unlocking the achievement!
         repoUrl: "https://github.com/Gegewindis/FloodFIll"
     },
 
-    ":Infinite-Loldle": {
+    "Infinite-Loldle": {
         title: "Infinite Loldle",
         text: ` 
 ## The website
@@ -128,7 +128,7 @@ found [here](https://github.com/Gegewindis/Infinite-Loldle-Website/).
         repoUrl: "https://github.com/Gegewindis/Infinite-Loldle-Website/"
     },
 
-    ":Malicus": {
+    "Malicus": {
         title: "Malicus",
         text: ` 
 This was my very **first website**, created using only **HTML** and **CSS**.
@@ -148,7 +148,7 @@ GitHub, which you can find [here](https://github.com/Gegewindis/Melicus).
         repoUrl: "https://github.com/Gegewindis/Melicus"
     },
 
-    ":SimSim": {
+    "SimSim": {
         title: "SimSim",
         text: ` 
 This project was an assignment from school where I had to learn to

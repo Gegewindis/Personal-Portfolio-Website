@@ -48,7 +48,7 @@ function Projects() {
     return (
         <div className="Projects-container">
             <div className="content-title" id="projects">
-                <h1>Personal Projects</h1>
+                <h1>Other Projects</h1>
             </div>
             <div className="personal-projects-container">
                 {info.map((project, index) => (

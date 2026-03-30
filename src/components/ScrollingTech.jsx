@@ -10,11 +10,9 @@ function ScrollingTech() {
     const boxLen = 350
 
     const row = []
-    for (let i = 0; i < Math.ceil(window.innerWidth/boxLen) * 2; i++) {
-        row.push(techs[i % techs.length])
+    for (let i = 0; i < Math.ceil(window.innerWidth / (boxLen * techs.length)) * 2; i++) {
+        row.push(...techs)
     }
-
-
 
     return (
         <div style={{ overflow: "hidden" }}>
